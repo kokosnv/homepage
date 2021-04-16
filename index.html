@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cccccc">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <title>Максим Кох. Веб-разработчик. Персональная страница.</title>
+   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+   <script src="jquery-3.5.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+   <script src="scripts.js"></script>
+</head>
+<body>
+  <div class="black-layer">
+		<div class="callback-offer-form">
+		<h2 class="form-header">Заказ звонка</h2>
+		<form action="#" method="POST">
+		<label>
+			* Ваше имя
+		</label>
+		<input type="text" id="name" class="input-name" required>
+		<label>
+			* Номер телефона
+		</label>
+		<input type="text" id="name" class="input-phone" placeholder="+7 (999) 999 99 99" required>
+		<button type="submit" class="submit-callback-offer-form">Заказать</button>
+		<button type="button" class="close-callback-offer-form">Закрыть</button>
+		</form>
+  </div>			
+	</div>
+    <header class="fixed-container">
+      <div class="burger-button-container">
+      <a class="burger-button  text-in-gradient" href="#">&#61346;</a>
+      
+      </div>
+        <nav>
+            <ul class="main-navbar">
+                <li class="main-navbar__item"><a class="main-navbar__link burger-close-button  text-in-gradient" href="#">&#61156;</a></li>
+                <li class="main-navbar__item"><a class="main-navbar__link" href="#services">Услуги</a></li>
+                <li class="main-navbar__item"><a class="main-navbar__link" href="#portfolio">Портфолио</a></li>
+                <li class="main-navbar__item"><a class="main-navbar__link" href="#prices">Стоимость</a></li>
+            </ul>
+        </nav>
+        <div class="contact-phone">
+            <a href="tel:+79898072097">+7 (989) 807-20-97</a> 
+            <button class="callback-offer header-button"><span class="call-words">Заказать звонок</span><span class="call-sign  text-in-gradient">&#60486;</span></button>
+        </div>
+    </header>
+<div class="owner-info fixed-container">  
+  <div class="top-flying-tags">
+    <span class="top-flying-tags__item  text-in-gradient">{}</span>
+    <span class="top-flying-tags__item  text-in-gradient">#</span>
+    <span class="top-flying-tags__item  text-in-gradient">&lt;div&gt;</span>
+    <span class="top-flying-tags__item  text-in-gradient">&lt;/div&gt;</span>
+    <span class="top-flying-tags__item  text-in-gradient">&lt;/&gt;</span>
+  </div>
+    <div class="photo-container">
+        <svg width="660" height="700" class="owner-bg">
+              <linearGradient id="MyGradient"  x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(65)">
+                <stop offset="0%" stop-color="#ff2f96"/>
+                <stop offset="100%" stop-color="#ff8f5a"/>
+            </linearGradient>
+            <g transform = "translate(120, 160) rotate(42 450 450)" class="figure-bg">
+              <rect rx="250" ry="280" width="900" height="900" fill="url(#MyGradient)" class="figure-bg-rect"/> 
+            </g>
+      </svg>
+        <img src="img/owner-portrait.png" alt="Максим Кох. Собственной персоной." class="owner-portrait"/>
+  </div>
+    <h1 class="owner-name">Максим Кох</h1>
+    <p class="owner-speciality">Веб-разработчик</p>
+      <button class="learn-more-button">Узнать больше</button>
+</div> 
+ <section class="site-part lighted" id="services">
+  <div class="fixed-container">
+   <h2 class="section-header">Что я делаю</h2>
+   <ul class="services stretched">
+     <li class="services__item"><img src="img/service1.png" alt="" class="services__item-logo">Вёрстка лендинг-страниц и сайтов любой сложности</li>
+     <li class="services__item"><img src="img/service2.png" alt="" class="services__item-logo">Адаптивная вёрстка под все браузеры и устройства</li>
+     <li class="services__item"><img src="img/service3.png" alt="" class="services__item-logo">Frontend-разработка и программирование</li>
+     <li class="services__item"><img src="img/service4.png" alt="" class="services__item-logo">Исправление и доработка существубщей вёрстки</li>
+   </ul>
+ <button class="learn-more-button centered">Узнать стоимость</button>
+ </div>
+ </section>
+ <section class="site-part" id="portfolio">
+   <h2 class="section-header">Примеры моих работ</h2>
+   <div class="portfolio fixed-container">
+    <img class="my-works-controls left-arrow" src="img/arrow.png" alt="Назад">
+    <img class="my-works-controls right-arrow" src="img/arrow.png"  alt="Вперед">
+        <ul class="my-works stretched">
+           <li class="my-works__item"><img src="img/portpholio/psychologist.png" alt="" class="my-works-img"> Сайт психолога Веры Антоновой</li>
+           <li class="my-works__item"><img src="img/portpholio/kids_wear.png" alt="" class="my-works-img"> Сайт магазина детской одежды</li>
+           <li class="my-works__item"><img src="img/portpholio/fisher.png" alt="" class="my-works-img"> Сайт магазина &laquo;Рыболов&raquo;</li>
+           <li class="my-works__item"><img src="img/portpholio/psychologist.png" alt="" class="my-works-img"> Сайт психолога Веры Антоновой2</li>
+           <li class="my-works__item"><img src="img/portpholio/kids_wear.png" alt="" class="my-works-img"> Сайт магазина детской одежды2</li>
+           <li class="my-works__item"><img src="img/portpholio/fisher.png" alt="" class="my-works-img"> Сайт магазина &laquo;Рыболов2&raquo;</li>
+        </ul>
+   </div>
+   <button class="learn-more-button centered" id="prices">Заказать проект</button>
+ </section>
+ <section class="site-part important-info">
+  <div class="bottom-flying-tags">
+    <span class="bottom-flying-tags__item">{}</span>
+    <span class="bottom-flying-tags__item">#</span>
+    <span class="bottom-flying-tags__item">&lt;div&gt;</span>
+    <span class="bottom-flying-tags__item">&lt;/div&gt;</span>
+    <span class="bottom-flying-tags__item">&lt;/&gt;</span>
+  </div>
+   <h2 class="important-info-header">Адаптивная вёрстка под все устройства <br>и браузеры от 1000 рублей всего за 4 часа.*</h2>
+   <p class="important-info-details">
+     * Срок и стоимость могут отличаться от заявленных и расчитываются индивидуально,<br>
+      в зависимости от сложности задач.
+   </p>
+ </section>
+ <footer>
+     <div class="fixed-container stretched">
+         <div class="footer-part">
+         <ul class="footer-nav">
+             <li class="footer-nav__item"><a href="#services">Услуги</a></li>
+             <li class="footer-nav__item"><a href="#portfolio">Портфолио</a></li>
+             <li class="footer-nav__item"><a href="#prices">Стоимость</a></li>
+         </ul>
+         </div>
+         <div class="footer-part">
+             <p class="footer-contact"><span class="contact-icon text-in-gradient">&#60486;</span><a href="tel:+79898072097">+7 (989) 807 20-97</a></p>
+             <p class="footer-contact"><span class="contact-icon text-in-gradient">&#60519;</span><a href="mailto:inbox@kokos.su">inbox@kokos.su</a></p>
+         </div>
+         <div class="footer-part">
+         <button class="callback-offer">Заказать звонок</button>
+            <ul class="social-networks">
+                <li class="social-networks__item"><a class="vk-link" href="#vk">&nbsp;</a></li>
+                <li class="social-networks__item"><a class="fb-link" href="#fb">&nbsp;</a></li>
+                <li class="social-networks__item"><a class="twitter-link" href="#twitter">&nbsp;</a></li>                
+                <li class="social-networks__item"><a class="insta-link" href="#insta">&nbsp;</a></li>
+            </ul>
+         </div>
+     </div>
+     <div class="black-line"><p>&copy; Максим Кох, 2020 - 2021</p></div>
+ </footer>
+</body>
+</html>
