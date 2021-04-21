@@ -12,24 +12,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
   <title>Максим Кох. Веб-разработчик. Персональная страница.</title>
-   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-   <script src="jquery-3.5.0.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
-   <script src="scripts.js"></script>
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="scripts.js"></script>
 </head>
 <body>
   <div class="black-layer">
 		<div class="callback-offer-form">
 		<h2 class="form-header">Заказ звонка</h2>
-		<form action="#" method="POST">
+		<form method="POST">
 		<label>
 			* Ваше имя
 		</label>
-		<input type="text" id="name" class="input-name" required>
+		<input type="text" name="callback-name" class="input-name" required>
 		<label>
 			* Номер телефона
 		</label>
-		<input type="text" id="name" class="input-phone" placeholder="+7 (999) 999 99 99" required>
+		<input type="text" name="callback-phone" class="input-phone" placeholder="+7 (999) 999 99 99" required>
 		<button type="submit" class="submit-callback-offer-form">Заказать</button>
 		<button type="button" class="close-callback-offer-form">Закрыть</button>
 		</form>
@@ -94,14 +97,11 @@
    <div class="portfolio fixed-container">
     <img class="my-works-controls left-arrow" src="img/arrow.png" alt="Назад">
     <img class="my-works-controls right-arrow" src="img/arrow.png"  alt="Вперед">
-        <ul class="my-works stretched">
-           <li class="my-works__item"><img src="img/portpholio/psychologist.png" alt="" class="my-works-img"> Сайт психолога Веры Антоновой</li>
-           <li class="my-works__item"><img src="img/portpholio/kids_wear.png" alt="" class="my-works-img"> Сайт магазина детской одежды</li>
-           <li class="my-works__item"><img src="img/portpholio/fisher.png" alt="" class="my-works-img"> Сайт магазина &laquo;Рыболов&raquo;</li>
-           <li class="my-works__item"><img src="img/portpholio/psychologist.png" alt="" class="my-works-img"> Сайт психолога Веры Антоновой2</li>
-           <li class="my-works__item"><img src="img/portpholio/kids_wear.png" alt="" class="my-works-img"> Сайт магазина детской одежды2</li>
-           <li class="my-works__item"><img src="img/portpholio/fisher.png" alt="" class="my-works-img"> Сайт магазина &laquo;Рыболов2&raquo;</li>
-        </ul>
+        <div class="my-works stretched owl-carousel owl-theme">
+           <div class="my-works__item"><img src="img/portpholio/psychologist.png" alt="" class="my-works-img"> Сайт психолога Веры Антоновой</div>
+           <div class="my-works__item"><img src="img/portpholio/kids_wear.png" alt="" class="my-works-img"> Сайт магазина детской одежды</div>
+           <div class="my-works__item"><img src="img/portpholio/fisher.png" alt="" class="my-works-img"> Сайт магазина Рыболов </div>
+        </div>
    </div>
    <button class="learn-more-button centered" id="prices">Заказать проект</button>
  </section>
@@ -135,10 +135,10 @@
          <div class="footer-part">
          <button class="callback-offer">Заказать звонок</button>
             <ul class="social-networks">
-                <li class="social-networks__item"><a class="vk-link" href="#vk">&nbsp;</a></li>
-                <li class="social-networks__item"><a class="fb-link" href="#fb">&nbsp;</a></li>
-                <li class="social-networks__item"><a class="twitter-link" href="#twitter">&nbsp;</a></li>                
-                <li class="social-networks__item"><a class="insta-link" href="#insta">&nbsp;</a></li>
+                <li class="social-networks__item"><a class="social-networks__link vk-link" href="https://vk.com/kokos_su" target="_blank">&nbsp;</a></li>
+                <li class="social-networks__item"><a class="social-networks__link fb-link" href="fb"  target="_blank">&nbsp;</a></li>
+                <li class="social-networks__item"><a class="social-networks__link twitter-link" href="#twitter"  target="_blank">&nbsp;</a></li>                
+                <li class="social-networks__item"><a class="social-networks__link insta-link" href="insta"  target="_blank">&nbsp;</a></li>
             </ul>
          </div>
      </div>

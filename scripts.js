@@ -38,22 +38,49 @@ $(function(){
         
     $('.my-works-controls').bind('click', function(){  
             if($(this).attr('class')=='my-works-controls right-arrow') {
-                $(".my-works" ).append($(".my-works__item" ).first());
+                $(".my-works" ).trigger('next.owl.carousel');
             }
             else{
-                $(".my-works" ).prepend($(".my-works__item" ).last());
+                $(".my-works" ).trigger('prev.owl.carousel');
             }
     });
+
+    $( "form" ).submit(function(){
+        var formData = $( this ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
+
+        $.post( "callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
+          allert( data ); // вставляем в элемент <div> данные, полученные от сервера
+        })
+      });
 
     $(document).ready(function(){
         var figure_size = $(window).width();
         var coord_x_correct = 160;
-            figure_size = Math.round(Math.sqrt((figure_size * figure_size) / 2)) + 100; 
-        
-        var my_works_items = $('.my_works__item');
-        var my_works_count = my_works_items.count;
+        figure_size = Math.round(Math.sqrt((figure_size * figure_size) / 2)) + 100; 
+
+        $('.my-works').owlCarousel({
+            rtl:false,
+            loop:true,
+            margin:10,
+            nav:false,
+            autoplay:true,
+            autoplayTimeout:10000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
 
         $('.input-phone').mask("+7 (999) 999 99 99");
+
         if($(window).width() > 940){
             $('.top-flying-tags__item').css({
             'font-size'             : '34px',
@@ -72,6 +99,7 @@ $(function(){
         });
     }
     else if($(window).width() > 660){
+
         $('.top-flying-tags__item').css({
             'font-size'             : '23px',
             'transition-property'   : 'font-size rotate translate',
@@ -106,6 +134,5 @@ $(function(){
             'height': figure_size 
         });
     }
-
     });
 });
