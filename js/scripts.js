@@ -25,6 +25,14 @@ $(function(){
 	});
 	
 	$('.callback-offer, .learn-more-button').click(function () {
+        if($(this).attr('class') == 'learn-more-button') {
+            $('.form-header').html("Заказ проекта");
+            $('.additional-data-inputs').show();
+        }
+        else{
+            $('.form-header').html("Заказ звонка");
+            $('.additional-data-inputs').hide();
+        }
 		$('.black-layer').fadeIn(400);
 		$('body').toggleClass('scroll-off');
 	});
@@ -44,44 +52,33 @@ $(function(){
                 $(".my-works" ).trigger('prev.owl.carousel');
             }
     });
-
-    $( "form" ).submit(function(){
+/*
+    $( "#callback-form").submit(function(){
         var formData = $( this ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
-
         $.post( "callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
-          allert( data ); // вставляем в элемент <div> данные, полученные от сервера
+          alert( data ); // вставляем в элемент <div> данные, полученные от сервера
         })
       });
+*/
+    $('.submit-callback-offer-form').click(function () {
+        var email_pattern = '/^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i';
 
-    $(document).ready(function(){
-        var figure_size = $(window).width();
+        if($('.input-email').val().length > 0 && email_pattern.test($('.input-email').val()))alert("Пожалуйста, укажите корректный e-mail!");
+		if($('.input-phone').val().length === 0 ) alert("Пожалуйста, укажите корректный номер телефона!");
+        else if($('.input-name').val().length > 0 ){
+           $('.callback-offer-form').html('<p class="form_header">Спасибо, ' + $('.input-name').val() + '!<br>Я обязательно свяжусь с Вами!</p><p><sup>Это сообщение исчезнет автоматически.</sup></p> <p><button type="button" onClick="window.location.reload();">Закрыть</button></p>');
+           setTimeout(location.reload.bind(location), 3000);
+        } 
+	});
+
+    function resize_figure (window_width) {
+
+        var figure_size = Math.round(Math.sqrt((window_width * window_width) / 2)) + 100; 
         var coord_x_correct = 160;
-        figure_size = Math.round(Math.sqrt((figure_size * figure_size) / 2)) + 100; 
 
-        $('.my-works').owlCarousel({
-            rtl:false,
-            loop:true,
-            margin:10,
-            nav:false,
-            autoplay:true,
-            autoplayTimeout:10000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:3
-                }
-            }
-        });
+        //alert(window_width);
 
-        $('.input-phone').mask("+7 (999) 999 99 99");
-
-        if($(window).width() > 940){
+        if(window_width > 940){
             $('.top-flying-tags__item').css({
             'font-size'             : '34px',
             'transition-property'   : 'font-size rotate translate',
@@ -97,8 +94,9 @@ $(function(){
             'width' : 900,
             'height': 900
         });
-    }
-    else if($(window).width() > 660){
+        }
+
+        else if(window_width > 660){
 
         $('.top-flying-tags__item').css({
             'font-size'             : '23px',
@@ -115,7 +113,7 @@ $(function(){
             'width' : 600,
             'height': 600
         });
-    }else{
+        }else{
         $('.top-flying-tags__item').css({
             'font-size'             : '18px',
             'transition-property'   : 'font-size rotate translate',
@@ -123,7 +121,7 @@ $(function(){
             'width': '50px'
         }); 
         
-        if($(window).width() > 390) coord_x_correct = 0;
+        if(window_width > 390) coord_x_correct = 0;
         
         $('.figure-bg').attr("transform", "translate(" + Math.round(figure_size / 2 - coord_x_correct) + ", " + Math.round(figure_size / 2) + ") rotate(45 " + Math.round(figure_size / 2) + " " + Math.round(figure_size / 2) + ")");
         
@@ -133,6 +131,43 @@ $(function(){
             'width' : figure_size,
             'height': figure_size 
         });
+        }
     }
+
+    var lastWidth = $(window).width();
+
+    $(window).resize(function(){
+        if($(window).width() !== lastWidth){
+            resize_figure ($(window).width());
+            lastWidth = $(window).width();
+        }
+     });      
+
+    $(document).ready(function(){
+
+        resize_figure ($(window).width());
+
+        $('.my-works').owlCarousel({
+            rtl:false,
+            loop:true,
+            margin:10,
+            nav:false,
+            autoplay:true,
+            autoplayTimeout:10000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                530:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
+
+        $('.input-phone').mask("+7 (999) 999 99 99");
     });
 });

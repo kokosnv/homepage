@@ -9,17 +9,17 @@ html, body {
 
 @font-face {
     font-family: iconfont;
-    src: url('fonts/icofont.woff2');
+    src: url('../fonts/icofont.woff2');
 }
 
 @font-face {
     font-family: Roboto;
-    src: url('fonts/Roboto-bold.woff2');
+    src: url('../fonts/Roboto-bold.woff2');
 }
 
 @font-face {
     font-family: 'Roboto Regular';
-    src: url('fonts/Roboto-medium.woff2');
+    src: url('../fonts/Roboto-medium.woff2');
 }
 
 .black-layer {
@@ -38,14 +38,14 @@ html, body {
 	margin: auto;
 	padding: 40px;
 	position: relative;
-	top: 80px;
-    width: calc(100vw - 110px);
+	top: calc(100vh - 630px);
+  width: calc(100vw - 110px);
 	max-width: 300px;
-    min-width: 170px;
-    background: linear-gradient(300deg, #ff2f9699, #ff8f5acc);
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ff8f5a99;
-    color: #ffffff;
+  min-width: 170px;
+  background: linear-gradient(300deg, #ff2f9699, #ff8f5acc);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff8f5a99;
+  color: #ffffff;
 }
 
 input {
@@ -58,6 +58,22 @@ input {
 	background-color: #ffffffcc;
 	border: 1px solid #ebebeb;
 	padding: 5px;
+}
+
+textarea {
+    display: block;
+    width: calc(100vw - 120px);
+	max-width: 280px;
+    min-width: 160px;
+    height: 75px;
+	margin: 10px 0 28px 0;
+	background-color: #ffffffcc;
+	border: 1px solid #ebebeb;
+	padding: 5px;
+}
+
+.callback-offer-form p {
+    text-align: center;
 }
 
 .callback-offer-form button {
@@ -260,7 +276,7 @@ a {
 
 .owner-bg {
 	top: 55px;
-	right: 0px;
+	right: 0;
 	position: absolute;
 	z-index: 1;
 }
@@ -390,7 +406,7 @@ a {
     padding: 0;
     display: block;
     width: 370px;
-    height: 290px;
+    height: auto;
 }
 
 .important-info {
@@ -518,7 +534,7 @@ a {
     margin-top: 20px;
     width: 100%;
     height: 100%;
-    background-image: url(img/sn-sprite.png);
+    background-image: url(../img/sn-sprite.png);
     background-repeat: no-repeat;
 }
 
@@ -550,6 +566,21 @@ a {
     margin: auto;
     padding: 31px 0;
     width: 220px;
+}
+
+@media (min-width: 1920px) {
+
+.owner-bg {
+    width: calc(100vw - 1200px);
+}
+
+.owner-portrait {
+	top: 160px;
+	right: calc(100vw - 1860px);
+	position: absolute;
+	z-index: 2;
+}
+
 }
 
 @media (max-width: 1250px) {
@@ -642,16 +673,16 @@ nav {
 }
 
 .important-info-header {
-    width:     calc(100% - 80px);
+    width:     calc(100% - 200px);
     padding: 30px;
-    margin: 0;
+    margin: 0 auto;
 	font-size: 40px;
 }
 
 .important-info-details {
-    width:     calc(100% - 80px);
+    width:     calc(100% - 200px);
     padding: 40px;
-    margin: 0;
+    margin: 0 auto;
 	font-size: 15px;
 }
 .bottom-flying-tags__item {
@@ -679,7 +710,7 @@ nav {
     
 }
 
-@media (max-width: 940px) {
+@media (max-width: 960px) {
     
     .fixed-container {
         width: 100%;
@@ -703,15 +734,15 @@ nav {
     }
 
     .top-flying-tags__item:nth-child(1) {
-        transform: rotate(5deg) translate(-30vw,20px);
+        transform: rotate(5deg) translate(-45vw,20px);
     }
     
     .top-flying-tags__item:nth-child(2) {
-        transform: rotate(-10deg) translate(-35vw,30px);
+        transform: rotate(-10deg) translate(-55vw,30px);
     }
     
     .top-flying-tags__item:nth-child(3) {
-        transform: rotate(-25deg) translate(-35vw,50px);
+        transform: rotate(-22deg) translate(-47vw,50px);
     }
     
     .top-flying-tags__item:nth-child(4) {
@@ -761,7 +792,7 @@ nav {
     }
     
     .owner-bg {
-        width: 600px;
+        width: 650px;
         height: 480px;
     }
     
@@ -771,7 +802,7 @@ nav {
     }
 
     .services__item {
-        width: 300px;
+        width: 320px;
         margin: auto;
         padding: auto;
     }
@@ -826,7 +857,7 @@ nav {
     .important-info-header {
         font-size: 25px;
         line-height: 35px;
-        width: calc(100% - 140px);
+        width: calc(100vw - 140px);
         min-width: 250px;
         padding: 30px auto;
         margin: 0 auto;
@@ -835,7 +866,7 @@ nav {
     .important-info-details {
         font-size: 15px;
         line-height: 20px;
-        width: calc(100% - 140px);
+        width: calc(100vw - 140px);
         min-width: 250px;
         padding: 30px auto;
         margin: 0 auto;
@@ -851,7 +882,7 @@ nav {
     }
     
     .bottom-flying-tags__item:nth-child(2) {
-        transform: rotate(-5deg) translate(-50vw,50px);
+        transform: rotate(-5deg) translate(-47vw,50px);
     }
     
     .bottom-flying-tags__item:nth-child(3) {
@@ -865,17 +896,42 @@ nav {
         transform: rotate(10deg) translate(40vw,40px);
     }
 	
-	.footer-part {
-		display: block;
-		margin: 0;
-		padding: 20px 10px;
+    footer > div.fixed-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .footer-part {
+		display: inline-flex; 
+		margin: 0 auto;
+		padding: 20px 30px;
+        width: 250px;
 	}
 
+    .footer-contact {
+        display: block;
+        float: none;
+        padding: 0;
+        width: 210px;
     }
+
+    .contact-icon {
+        font-size: 20px;
+    }
+
+    .footer-contact a {
+        font-size: 20px;
+    }
+
+}
 
 @media (max-width: 660px) {
     .owner-bg {
-        width: 600px;
+        width: 100vw;
         height: 480px;
     }
 
@@ -898,9 +954,16 @@ nav {
         transform: rotate(10deg) translate(35vw,130px);
     }
 
+    .footer-part {
+		display: block;
+		margin: 0 auto;
+		padding: 20px;
+        width: 250px;
+	}
+
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     .top-flying-tags__item:nth-child(1) {
         transform: rotate(5deg) translate(-20vw,20px);
@@ -967,17 +1030,24 @@ nav {
     }
 
     .footer-part {
-        width: calc(100% - 20px);
-        margin: 0;
-        padding: 20px 10px;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 20px;
         min-width: 230px;
+        max-width: 300px;
     }
     
     .footer-part > .callback-offer {
-        width: calc(100% - 40px);
-        margin: 0 20px;
+        width: 100%;
+        margin: 0 auto;
         background-color: #ff4e2e;
         color: #ffffff;
     }
+}
 
+@media screen and (max-height: 600px) {
+.callback-offer-form {
+  top: 10px;
+  margin: 0 auto;
+}
 }

@@ -14,17 +14,17 @@
   <title>Максим Кох. Веб-разработчик. Персональная страница.</title>
     <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
-    <script src="jquery-3.5.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
+    <script src="/js/jquery-3.5.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </head>
 <body>
   <div class="black-layer">
 		<div class="callback-offer-form">
 		<h2 class="form-header">Заказ звонка</h2>
-		<form method="POST">
+		<form method="POST" id="callback-form">
 		<label>
 			* Ваше имя
 		</label>
@@ -33,6 +33,16 @@
 			* Номер телефона
 		</label>
 		<input type="text" name="callback-phone" class="input-phone" placeholder="+7 (999) 999 99 99" required>
+    <div class="additional-data-inputs">
+      <label>
+        Адрес электронной почты
+      </label>
+      <input type="email" name="callback-email" class="input-email" placeholder="user@server.com">
+      <label>
+        Краткое описание заказа
+      </label>
+      <textarea name="callback-description" class="input-description"></textarea>
+    </div>
 		<button type="submit" class="submit-callback-offer-form">Заказать</button>
 		<button type="button" class="close-callback-offer-form">Закрыть</button>
 		</form>
@@ -84,10 +94,10 @@
   <div class="fixed-container">
    <h2 class="section-header">Что я делаю</h2>
    <ul class="services stretched">
-     <li class="services__item"><img src="img/service1.png" alt="" class="services__item-logo">Вёрстка лендинг-страниц и сайтов любой сложности</li>
-     <li class="services__item"><img src="img/service2.png" alt="" class="services__item-logo">Адаптивная вёрстка под все браузеры и устройства</li>
-     <li class="services__item"><img src="img/service3.png" alt="" class="services__item-logo">Frontend-разработка и программирование</li>
-     <li class="services__item"><img src="img/service4.png" alt="" class="services__item-logo">Исправление и доработка существубщей вёрстки</li>
+     <li class="services__item"><img src="img/service1.png" alt="" class="services__item-logo" width="79" height="74">Вёрстка лендинг-страниц и сайтов любой сложности</li>
+     <li class="services__item"><img src="img/service2.png" alt="" class="services__item-logo" width="79" height="74">Адаптивная вёрстка под все браузеры и устройства</li>
+     <li class="services__item"><img src="img/service3.png" alt="" class="services__item-logo" width="79" height="74">Frontend-разработка и программирование</li>
+     <li class="services__item"><img src="img/service4.png" alt="" class="services__item-logo" width="79" height="74">Исправление и доработка существубщей вёрстки</li>
    </ul>
  <button class="learn-more-button centered">Узнать стоимость</button>
  </div>
