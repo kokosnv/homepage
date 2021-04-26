@@ -25,7 +25,7 @@ $(function(){
 	});
 	
 	$('.callback-offer, .learn-more-button').click(function () {
-        if($(this).attr('class') == 'learn-more-button') {
+        if($(this).attr('class').substring(0,17) == 'learn-more-button') {
             $('.form-header').html("Заказ проекта");
             $('.additional-data-inputs').show();
         }

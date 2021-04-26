@@ -38,7 +38,7 @@ html, body {
 	margin: auto;
 	padding: 40px;
 	position: relative;
-	top: calc(100vh - 800px);
+	top: calc(50vh - 300px);
     width: calc(100vw - 110px);
 	max-width: 300px;
     min-width: 170px;
