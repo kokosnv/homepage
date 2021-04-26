@@ -38,14 +38,14 @@ html, body {
 	margin: auto;
 	padding: 40px;
 	position: relative;
-	top: calc(100vh - 630px);
-  width: calc(100vw - 110px);
+	top: calc(100vh - 800px);
+    width: calc(100vw - 110px);
 	max-width: 300px;
-  min-width: 170px;
-  background: linear-gradient(300deg, #ff2f9699, #ff8f5acc);
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ff8f5a99;
-  color: #ffffff;
+    min-width: 170px;
+    background: linear-gradient(300deg, #ff2f9699, #ff8f5acc);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff8f5a99;
+    color: #ffffff;
 }
 
 input {
