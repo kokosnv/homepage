@@ -52,31 +52,29 @@ $(function(){
                 $(".my-works" ).trigger('prev.owl.carousel');
             }
     });
-/*
-    $( "#callback-form").submit(function(){
-        var formData = $( this ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
-        $.post( "callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
-          alert( data ); // вставляем в элемент <div> данные, полученные от сервера
-        })
-      });
-*/
-    $('.submit-callback-offer-form').click(function () {
-        var email_pattern = '/^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i';
 
-        if($('.input-email').val().length > 0 && email_pattern.test($('.input-email').val()))alert("Пожалуйста, укажите корректный e-mail!");
+    $('.submit-callback-offer-form').click(function () {
+        var email_pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
+
+        if($('.input-email').val().length > 0){
+            if(email_pattern.test($('.input-email').val()) === false)alert("Пожалуйста, укажите корректный e-mail!");
+        }
 		if($('.input-phone').val().length === 0 ) alert("Пожалуйста, укажите корректный номер телефона!");
+
         else if($('.input-name').val().length > 0 ){
-           $('.callback-offer-form').html('<p class="form_header">Спасибо, ' + $('.input-name').val() + '!<br>Я обязательно свяжусь с Вами!</p><p><sup>Это сообщение исчезнет автоматически.</sup></p> <p><button type="button" onClick="window.location.reload();">Закрыть</button></p>');
-           setTimeout(location.reload.bind(location), 3000);
+            var formData = $("#callback-form").serialize();
+            $.post("callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
+                $('.callback-offer-form').html('<p class="form_header">' + data + '</p><p><sup>Это сообщение исчезнет автоматически.</sup></p> <p><button type="button" onClick="window.location.reload();">Закрыть</button></p>');
+            });
+            setTimeout(location.reload.bind(location), 3000);
         } 
+
 	});
 
     function resize_figure (window_width) {
 
         var figure_size = Math.round(Math.sqrt((window_width * window_width) / 2)) + 100; 
         var coord_x_correct = 160;
-
-        //alert(window_width);
 
         if(window_width > 940){
             $('.top-flying-tags__item').css({
@@ -144,6 +142,18 @@ $(function(){
      });      
 
     $(document).ready(function(){
+
+        $("#callback-form").submit(function(event){
+          /*  
+          var formData = $( form ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
+            $.post( "callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
+              //alert( data ); // вставляем в элемент <div> данные, полученные от сервера
+               $('.callback-offer-form').html('<p class="form_header">' + data + '</p><p><sup>Это сообщение исчезнет автоматически.</sup></p> <p><button type="button" onClick="window.location.reload();">Закрыть</button></p>');
+              setTimeout(location.reload.bind(location), 3000);
+            });
+        */
+            return false;
+        });
 
         resize_figure ($(window).width());
 
