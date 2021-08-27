@@ -19,6 +19,11 @@ $(function(){
         return false;
     });
 
+    $("#double-game").click(function(){
+        window.open('https://pairs-game.kokos.su', '_blank');
+        return false;
+    });
+
     $('.close-callback-offer-form').click(function () {
 		$('.black-layer').fadeOut(400);
 		$('body').toggleClass('scroll-off');
