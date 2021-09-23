@@ -19,12 +19,12 @@ $(function(){
         return false;
     });
 
-    $("#double-game").click(function(){
+    $(".double-game").click(function(){
         window.open('https://pairs-game.kokos.su', '_blank');
         return false;
     });
 
-    $("#students-db").click(function(){
+    $(".students-db").click(function(){
         window.open('https://students-db.kokos.su', '_blank');
         return false;
     });
