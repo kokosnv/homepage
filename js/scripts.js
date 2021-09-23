@@ -24,6 +24,11 @@ $(function(){
         return false;
     });
 
+    $("#students-db").click(function(){
+        window.open('https://students-db.kokos.su', '_blank');
+        return false;
+    });
+
     $('.close-callback-offer-form').click(function () {
 		$('.black-layer').fadeOut(400);
 		$('body').toggleClass('scroll-off');
