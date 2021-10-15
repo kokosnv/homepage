@@ -154,7 +154,8 @@ $(function(){
     $(document).ready(function(){
 
         $("#callback-form").submit(function(event){
-          var formData = $( form ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
+            event.preventDefault(); 
+            let formData = $( form ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
             $.post( "callback-offer.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом POST
               //alert( data ); // вставляем в элемент <div> данные, полученные от сервера
                $('.callback-offer-form').html('<p class="form_header">' + data + '</p><p><sup>Это сообщение исчезнет автоматически.</sup></p> <p><button type="button" onClick="window.location.reload();">Закрыть</button></p>');
